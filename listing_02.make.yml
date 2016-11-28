@@ -1,0 +1,35 @@
+# YAML format 
+# Line with comment starts with a hash 
+# 
+# Attributes are declared like this:
+# attribute: value
+# Attribute values with spaces and float-like string values must be quoted:
+# attribute: 'long value'
+
+# Core must be defined.
+core: 8.x
+# (Drush) api must be defined, always to '2'.
+# version numbers that can be interpreted as floats must be quoted 
+api: '2'
+
+# Here you see the format of an array in a .make.yml-file. Indented text
+# "inside" a parent are array keys, and each set to the right of the last is
+# a layer deeper in the array. 
+
+# Define the exact Drupal core version you need 
+projects:
+  drupal:
+    # version numbers that can’t be interpreted as floats do not need quotes
+    version: 8.2.3
+  # Then define contrib modules etc.
+  # Note that we’re still inside ‘projects’ –array/object, hence the indenting
+  oauth:
+    version: '2.0'
+  commerce:
+    subdir: commerce
+    version: 2.0-beta3
+# You may also provide default values to all projects
+# Now Views module will be place in sites/all/modules/contrib
+defaults:
+  projects:
+    subdir: 'contrib'

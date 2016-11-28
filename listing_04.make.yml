@@ -1,0 +1,34 @@
+# YAML format 
+# Line with comment starts with a hash 
+# 
+# Attributes are declared like this:
+# attribute: value
+# Attribute values with spaces and float-like string values must be quoted:
+# attribute: 'long value'
+
+# Core must be defined.
+core: 8.x
+# (Drush) api must be defined, always to '2'.
+# version numbers that can be interpreted as floats must be quoted 
+api: '2'
+
+# Here you see the format of an array in a .make.yml-file. Indented text
+# "inside" a parent are array keys, and each set to the right of the last is
+# a layer deeper in the array. 
+
+# Define the exact Drupal core version you need 
+projects:
+  drupal:
+    # version numbers that can’t be interpreted as floats do not need quotes
+    version: 8.2.3
+# ==== 
+# YAML format, get a specific version of ctools module
+# Note continuous, we're still inside "projects" array.
+  ctools: 
+    download: 
+      # Download method defaults to git, so this is not necessary 
+      # type: git
+      # Optionally provide git branch so Drush can write that to .info file
+      branch: 8.x-3.x
+      # Git commit hash
+      revision: 1fe3649

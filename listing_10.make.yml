@@ -1,0 +1,33 @@
+# YAML format 
+# Line with comment starts with a hash 
+# 
+# Attributes are declared like this:
+# attribute: value
+# Attribute values with spaces and float-like string values must be quoted:
+# attribute: 'long value'
+
+# Core must be defined.
+core: 8.x
+# (Drush) api must be defined, always to '2'.
+# version numbers that can be interpreted as floats must be quoted 
+api: '2'
+
+# Here you see the format of an array in a .make.yml-file. Indented text
+# "inside" a parent are array keys, and each set to the right of the last is
+# a layer deeper in the array. 
+
+# Define the exact Drupal core version you need 
+projects:
+  drupal:
+    # version numbers that can’t be interpreted as floats do not need quotes
+    version: 8.2.3
+# ==== 
+# Yaml format
+# Note the indentation, we're still inside "projects" array.
+  role_expose:
+    # Get the latest release within 8.x-1 –version:
+    # version: 1
+    # Get the latest development version:
+    # version: 1.x 
+    # Get the specified version even when it is not the latest release
+    version: '1.0' 

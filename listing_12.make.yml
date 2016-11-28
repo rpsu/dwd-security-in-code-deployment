@@ -1,0 +1,40 @@
+# YAML format 
+# Line with comment starts with a hash 
+# 
+# Attributes are declared like this:
+# attribute: value
+# Attribute values with spaces and float-like string values must be quoted:
+# attribute: 'long value'
+
+# Core must be defined.
+core: 8.x
+# (Drush) api must be defined, always to '2'.
+# version numbers that can be interpreted as floats must be quoted 
+api: '2'
+
+# Here you see the format of an array in a .make.yml-file. Indented text
+# "inside" a parent are array keys, and each set to the right of the last is
+# a layer deeper in the array. 
+
+# Define the exact Drupal core version you need 
+projects:
+  drupal:
+    # version numbers that can’t be interpreted as floats do not need quotes
+    version: 8.2.3
+# ==== 
+# Yaml format, patching the module, both public and local patch files
+# Note the indentation, we're still inside "projects" array.
+  field_group:
+    # Get the latest release within 8.x-1 –version:
+    # version: 1
+    # Get the latest development version:
+    # version: 1.x 
+    # Get the specified version even when it is not the latest release
+    version: '1.0-rc4' 
+    patch:
+      # Explain briefly why this patch is needed.
+      # Get the file path from the drupal.org issue in question and
+      # use issue number as patch array key.
+      2761159: 'https://www.drupal.org/files/issues/field_group-empty_group_nonnumeric_index-2761159-2-D8.patch'
+      # Use file in patches-folder (relative to .make-file location)
+      other_fix: 'patches/field_group-fix_it.patch'

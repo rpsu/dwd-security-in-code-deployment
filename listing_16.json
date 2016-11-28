@@ -1,0 +1,8 @@
+"extra": {
+  "patches": {
+    "drupal/field_group": {
+      "A patch with URL": "https://www.drupal.org/files/issues/field_group-empty_group_nonnumeric_index-2761159-2-D8.patch", 
+      "A local patch file, path relative to the composer.json file": "patches/field_group-fix_it.patch"
+    }
+  }
+}
