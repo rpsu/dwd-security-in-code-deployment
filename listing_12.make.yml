@@ -25,11 +25,6 @@ projects:
 # Yaml format, patching the module, both public and local patch files
 # Note the indentation, we're still inside "projects" array.
   field_group:
-    # Get the latest release within 8.x-1 –version:
-    # version: 1
-    # Get the latest development version:
-    # version: 1.x 
-    # Get the specified version even when it is not the latest release
     version: '1.0-rc4' 
     patch:
       # Explain briefly why this patch is needed.
