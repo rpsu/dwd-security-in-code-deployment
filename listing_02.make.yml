@@ -29,7 +29,8 @@ projects:
     subdir: commerce
     version: 2.0-beta3
 # You may also provide default values to all projects
-# Now Views module will be place in sites/all/modules/contrib
+# Now OAuth and other modules with no subdir definition will be placed in
+# sites/all/modules/contrib
 defaults:
   projects:
     subdir: 'contrib'
